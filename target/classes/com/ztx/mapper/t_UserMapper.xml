@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.ztx.dao.t_UserDao"><!--这个namespace如果不加对应的dao就找不到对应的mapper-->
+<!--	<resultMap type="tUser" id="tUser">
+
+	</resultMap>-->
+
+
+	<!--resultType是个对象，因为在mybatisConfig.xml中配置过了typeAliases，所以直接写tUser
+	就可以了，否则要写com.ztx.entity.t_User-->
+	<select id = "selectById" resultType="tUSer" parameterType="java.lang.String">
+		select * from TUSER t where t.name = #{id}
+	</select>
+</mapper>
