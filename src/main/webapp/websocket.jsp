@@ -76,7 +76,20 @@
       //接收到消息的回调方法
       webSocket.onmessage = function (event) {
           var message = $("#message").html();
-          setMessageInnerHTML(message+event.data+"<br/>");
+          var obj =JSON.parse(event.data);
+          if(obj.id ==="1"){
+              alert("判断成功")
+              setMessageInnerHTML(obj.message+"<br/>");
+              alert("1");
+              setMessageInnerHTML(obj.message+"<br/>");
+              alert("2");
+              setMessageInnerHTML(obj.id+"<br/>");
+          }
+          alert("3");
+          setMessageInnerHTML(obj.message+"<br/>");
+          setMessageInnerHTML(obj.id+"<br/>");
+
+          alert("4");
       }
 
       //连接关闭的回调方法
